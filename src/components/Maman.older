@@ -1,0 +1,42 @@
+import {Component} from 'react' ; 
+import Toto from './Toto.old' ; 
+
+class Maman extends Component{
+
+    state = { 
+        messageMaman : null , 
+        messageToto : null , 
+        disabled : true 
+    }
+
+    ordreMaman = (args)=> {
+        this.setState({
+            messageMaman : args 
+        })
+     }
+
+    reponseToto = () => this.setState({messageToto: 'D\'accord Maman'}) ;
+
+    render(){
+        return(
+            <div>
+                <h1>Maman</h1>
+                <button onClick={()=>this.ordreMaman("va ranger ta chambre ! ")}>
+                     Ordre de la mère 
+                </button>
+                <p>{this.state.messageMaman}</p>
+
+                <hr/>
+
+                <Toto 
+                name = "Toto"
+                reponseTotoProps = {this.reponseToto}
+                letState = {this.state}
+                />
+
+            </div>
+        )
+    }
+}
+
+export default Maman ; 

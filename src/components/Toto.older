@@ -1,0 +1,26 @@
+import React from 'react'
+
+const Toto = props =>{ 
+    
+    console.log(props)
+     
+     const btnReponseToto =
+       props.letState.messageMaman !== null ? (
+
+         <button onClick={props.reponseTotoProps}>Réponse</button>
+       ) : (
+         <button disabled>Réponse</button>
+       ); 
+
+    
+    return(
+        <div>
+            <h2>{props.name}</h2>
+            {btnReponseToto}
+
+            <p>{props.letState.messageToto}</p>
+            
+        </div>
+    )
+}
+export default Toto ; 
